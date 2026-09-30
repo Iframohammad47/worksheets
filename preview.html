@@ -1,0 +1,634 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#eaf2ed">
+<title>Mathematics Worksheet | 4MA1</title>
+
+<style>
+:root {
+  --green: #668875;
+  --light: #eaf2ed;
+  --dark: #263b31;
+  --paper: #ffffff;
+  --border: #dce5df;
+  --muted: #718078;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f4f7f4;
+  color: var(--dark);
+  font-family: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+header {
+  background: var(--light);
+  padding: 35px 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: clamp(23px, 5vw, 34px);
+  margin: 5px 0;
+}
+
+header p {
+  color: var(--muted);
+  margin: 5px 0;
+}
+
+.container {
+  max-width: 850px;
+  margin: auto;
+  padding: 20px 14px 60px;
+}
+
+.info {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 20px;
+}
+
+.info input {
+  width: 100%;
+  padding: 13px;
+  margin-top: 7px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  font-size: 16px;
+}
+
+.progress-box {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(244,247,244,0.96);
+  padding: 12px 0;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 7px;
+}
+
+.progress-track {
+  height: 9px;
+  background: #dce5df;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--green);
+  transition: width 0.2s;
+}
+
+.section {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  margin: 18px 0;
+  overflow: hidden;
+}
+
+.section summary {
+  padding: 19px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 650;
+  background: var(--light);
+  list-style-position: inside;
+}
+
+.section summary:active {
+  background: #dce9df;
+}
+
+.section-content {
+  padding: 15px;
+}
+
+.question {
+  padding: 17px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.question:last-child {
+  border-bottom: none;
+}
+
+.question-title {
+  font-weight: 650;
+  margin-bottom: 8px;
+}
+
+.part {
+  margin: 13px 0;
+}
+
+.answer-label {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 5px;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  min-height: 70px;
+  padding: 13px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font: inherit;
+  font-size: 17px;
+  line-height: 1.5;
+  resize: vertical;
+  background: #fcfdfc;
+  color: var(--dark);
+  -webkit-appearance: none;
+}
+
+textarea:focus,
+input:focus {
+  outline: 2px solid var(--green);
+  border-color: var(--green);
+  background: white;
+}
+
+textarea::placeholder {
+  color: #a4b0a9;
+  font-size: 14px;
+}
+
+.marks {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 22px 0;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 13px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  min-height: 48px;
+}
+
+.primary {
+  background: var(--green);
+  color: white;
+}
+
+.secondary {
+  background: #e4ece6;
+  color: var(--dark);
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  padding: 25px;
+}
+
+@media (max-width: 600px) {
+  .container { padding: 12px 10px 40px; }
+  header { padding: 27px 15px; }
+  .section-content { padding: 12px; }
+  .section summary { padding: 16px 12px; }
+  textarea { min-height: 76px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <p>PEARSON EDEXCEL INTERNATIONAL GCSE</p>
+  <h1>Mathematics Worksheet</h1>
+  <p>Specification A | Code 4MA1</p>
+  <p>Topic 1: Numbers and Number Systems</p>
+</header>
+
+<div class="container">
+
+  <div class="info">
+    <label>Student Name</label>
+    <input type="text" id="studentName"
+      placeholder="Type your name here">
+
+    <label>Date</label>
+    <input type="date" id="studentDate">
+
+    <p><strong>Time:</strong> 90 minutes</p>
+    <p><strong>Total:</strong> 100 marks + 16 challenge marks</p>
+    <p>Answer all questions. Show your working wherever necessary.</p>
+    <p>You can type directly into the answer boxes. Your answers save automatically on this device.</p>
+  </div>
+
+  <div class="progress-box">
+    <div class="progress-label">
+      <strong>Worksheet Progress</strong>
+      <span id="progressText">0 answered</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+  </div>
+
+  <div id="worksheet"></div>
+
+  <div class="buttons">
+    <button class="primary" onclick="window.print()">
+      Print Worksheet
+    </button>
+    <button class="secondary" onclick="downloadAnswers()">
+      Download My Answers
+    </button>
+    <button class="secondary" onclick="clearAnswers()">
+      Clear All Answers
+    </button>
+  </div>
+
+  <footer>
+    Mathematics Practice | 4MA1<br>
+    Keep practising. Show your working. Check your answers.
+  </footer>
+
+</div>
+
+<script>
+
+const sections = [
+
+{
+title: "Section A: Integers, Decimals and Fractions",
+marks: "20 marks",
+questions: [
+["Q1. Calculate the following.", [
+["a) −8 + 15 − 12",1],
+["b) 24 ÷ (−6) × (−3)",1],
+["c) 3.75 + 8.6 − 2.48",1],
+["d) 0.36 × 0.5",1],
+["e) 7.2 ÷ 0.08",1]
+]],
+["Q2. Calculate, giving your answers in their simplest form.", [
+["a) 3/4 + 2/5",2],
+["b) 7/8 − 1/3",2],
+["c) 5/6 × 9/10",1],
+["d) 4/7 ÷ 2/3",1]
+]],
+["Q3.", [
+["a) Write 2 3/5 as an improper fraction.",1],
+["b) Write 23/4 as a mixed number.",1],
+["c) Arrange in ascending order: 0.65, 2/3, 0.6, 5/8",2]
+]],
+["Q4. A student has £120.", [
+["She spends 2/5 of her money on books and 0.25 of her original money on stationery.",0],
+["a) Calculate the amount spent on books.",1],
+["b) Calculate the amount spent on stationery.",1],
+["c) Calculate the fraction of her original money remaining.",2],
+["d) Calculate the amount of money remaining.",1]
+]]
+]
+},
+
+{
+title: "Section B: Factors, Multiples and Prime Numbers",
+marks: "15 marks",
+questions: [
+["Q5.", [
+["a) List all the factors of 36.",2],
+["b) Write the first five positive multiples of 7.",1],
+["c) State whether 91 is a prime number. Give a reason.",2]
+]],
+["Q6.", [
+["a) Express 84 as a product of its prime factors in index form.",3],
+["b) Express 180 as a product of its prime factors in index form.",3]
+]],
+["Q7. A teacher has 48 pencils and 60 pens.", [
+["She wants to distribute them into identical packs, with no items left over.",0],
+["a) Find the greatest possible number of packs.",2],
+["b) Calculate the number of pencils and pens in each pack.",2]
+]]
+]
+},
+
+{
+title: "Section C: Powers and Roots",
+marks: "15 marks",
+questions: [
+["Q8. Evaluate the following.", [
+["a) 6²",1],
+["b) 4³",1],
+["c) √169",1],
+["d) ∛216",1],
+["e) 2⁵ + 3²",1],
+["f) 5² − 2³",1]
+]],
+["Q9.", [
+["a) Write 256 as a power of 2.",1],
+["b) Write 1000 as a power of 10.",1],
+["c) Evaluate 3⁴ ÷ 3².",1],
+["d) Evaluate 2³ × 2⁴.",1]
+]],
+["Q10. A square has an area of 196 cm².", [
+["a) Calculate the length of one side.",2],
+["b) Calculate the perimeter of the square.",1],
+["A cube has a volume of 729 cm³.",0],
+["c) Calculate the length of one edge of the cube.",2]
+]]
+]
+},
+
+{
+title: "Section D: Percentages, Ratios and Fraction Conversions",
+marks: "25 marks",
+questions: [
+["Q11. Fraction, Decimal and Percentage Conversions.", [
+["Complete the following conversions. Enter all three values for each row.",0],
+["a) 1/4 = decimal ______ = percentage ______",2],
+["b) Fraction ______ = 0.6 = percentage ______",2],
+["c) Fraction ______ = decimal ______ = 35%",2]
+]],
+["Q12. Calculate the following.", [
+["a) Find 15% of 240.",1],
+["b) Express 45 as a percentage of 180.",2],
+["c) Increase 320 by 12%.",1],
+["d) Decrease 500 by 18%.",2]
+]],
+["Q13. A jacket originally costs Rs. 4,800.", [
+["During a sale, its price is reduced by 25%.",0],
+["a) Calculate the discount.",2],
+["b) Calculate the sale price.",1],
+["c) After the sale, the shop increases the sale price by 10%. Calculate the new price.",2]
+]],
+["Q14. Ratio.", [
+["a) Simplify the ratio 24 : 36.",1],
+["b) Divide Rs. 840 in the ratio 3 : 4.",2],
+["c) The ratio of boys to girls is 5 : 7. There are 36 students. Find the number of boys and girls.",2],
+["d) Concentrate and water are mixed in the ratio 2 : 5. If 600 ml of water is used, calculate the volume of concentrate.",1],
+["e) The ratio of red balls to blue balls is 3 : 8. There are 25 red balls. Calculate the number of blue balls.",2]
+]]
+]
+},
+
+{
+title: "Section E: Standard Form and Estimation",
+marks: "25 marks",
+questions: [
+["Q15. Standard Form.", [
+["a) Write the following numbers in standard form:",0],
+["i) 450,000",1],
+["ii) 0.00072",1],
+["iii) 8,350,000",1],
+["iv) 0.00506",1],
+["b) Write the following as ordinary numbers:",0],
+["i) 3.2 × 10⁵",1],
+["ii) 7.45 × 10⁻³",1],
+["c) Arrange in ascending order: 4.5 × 10³, 3.2 × 10⁴, 8.1 × 10²",2]
+]],
+["Q16. Calculate. Give your answers in standard form.", [
+["a) (3 × 10⁴) × (2 × 10³)",2],
+["b) (8 × 10⁶) ÷ (4 × 10²)",2],
+["c) 5.6 × 10³ + 2.4 × 10³",1]
+]],
+["Q17. Estimation.", [
+["a) Estimate (49.8 × 19.7) ÷ 10.2. Show how you round each number.",3],
+["b) Estimate √398 × 6.12. Show your approximations.",3]
+]],
+["Q18. Significant Figures and Decimal Places.", [
+["a) Round 48,763 to 2 significant figures.",1],
+["b) Round 0.006847 to 2 significant figures.",1],
+["c) Round 37.856 to 2 decimal places.",1],
+["d) Round 945.678 to 1 decimal place.",1],
+["e) Write 0.004987 correct to 3 significant figures.",1],
+["f) Write 6,849 correct to 2 significant figures.",1]
+]]
+]
+},
+
+{
+title: "Section F: Mixed Application and Problem-Solving",
+marks: "16 challenge marks",
+questions: [
+["Q19. Challenge: A factory produces 2.4 × 10⁵ components in one month.", [
+["a) Write this number as an ordinary number.",1],
+["b) If 15% of the components are defective, calculate the number of defective components.",2],
+["c) Express the number of non-defective components in standard form.",2]
+]],
+["Q20. Challenge: A school has 144 mathematics books and 180 science books.", [
+["a) Express both numbers as products of prime factors.",4],
+["b) Find the greatest number of identical groups into which the books can be divided without any books remaining.",2],
+["c) Find the number of mathematics and science books in each group.",2]
+]]
+]
+}
+
+];
+
+// Generate worksheet
+
+const worksheet = document.getElementById("worksheet");
+
+sections.forEach((section, s) => {
+
+  const details = document.createElement("details");
+  details.className = "section";
+  if (s === 0) details.open = true;
+
+  const summary = document.createElement("summary");
+  summary.textContent = `${section.title} (${section.marks})`;
+
+  details.appendChild(summary);
+
+  const content = document.createElement("div");
+  content.className = "section-content";
+
+  section.questions.forEach((question, q) => {
+
+    const questionBox = document.createElement("div");
+    questionBox.className = "question";
+
+    const heading = document.createElement("div");
+    heading.className = "question-title";
+    heading.textContent = question[0];
+
+    questionBox.appendChild(heading);
+
+    question[1].forEach((part, p) => {
+
+      const [text, marks] = part;
+
+      const partBox = document.createElement("div");
+      partBox.className = "part";
+
+      const label = document.createElement("div");
+      label.className = "answer-label";
+
+      label.textContent = marks > 0
+        ? `${text} (${marks} mark${marks > 1 ? "s" : ""})`
+        : text;
+
+      partBox.appendChild(label);
+
+      if (marks > 0) {
+        const area = document.createElement("textarea");
+
+        const id = `s${s}q${q}p${p}`;
+        area.id = id;
+        area.dataset.answer = "true";
+        area.placeholder = "Type your answer or working here...";
+        area.setAttribute("aria-label", text);
+
+        area.value = localStorage.getItem(id) || "";
+
+        area.addEventListener("input", () => {
+          localStorage.setItem(id, area.value);
+          updateProgress();
+        });
+
+        partBox.appendChild(area);
+      }
+
+      questionBox.appendChild(partBox);
+    });
+
+    content.appendChild(questionBox);
+  });
+
+  details.appendChild(content);
+  worksheet.appendChild(details);
+});
+
+// Student details save automatically
+
+["studentName", "studentDate"].forEach(id => {
+  const input = document.getElementById(id);
+  input.value = localStorage.getItem(id) || "";
+
+  input.addEventListener("input", () => {
+    localStorage.setItem(id, input.value);
+  });
+});
+
+// Progress tracker
+
+function updateProgress() {
+  const fields = document.querySelectorAll("[data-answer]");
+  const answered = [...fields].filter(
+    field => field.value.trim() !== ""
+  ).length;
+
+  const total = fields.length;
+  const percentage = total ? (answered / total) * 100 : 0;
+
+  document.getElementById("progressText").textContent =
+    `${answered} / ${total} answered`;
+
+  document.getElementById("progressBar").style.width =
+    percentage + "%";
+}
+
+updateProgress();
+
+// Download answers as a text file
+
+function downloadAnswers() {
+
+  let output = "MATHEMATICS WORKSHEET - 4MA1\n";
+  output += "Topic 1: Numbers and Number Systems\n\n";
+
+  output += "Student: " +
+    document.getElementById("studentName").value + "\n";
+
+  output += "Date: " +
+    document.getElementById("studentDate").value + "\n\n";
+
+  sections.forEach((section, s) => {
+
+    output += "\n" + section.title + "\n";
+    output += "=".repeat(50) + "\n";
+
+    section.questions.forEach((question, q) => {
+
+      output += "\n" + question[0] + "\n";
+
+      question[1].forEach((part, p) => {
+
+        if (part[1] > 0) {
+          const id = `s${s}q${q}p${p}`;
+          const answer = document.getElementById(id).value;
+
+          output += part[0] + "\n";
+          output += "Answer: " + (answer || "Not answered") + "\n\n";
+        } else {
+          output += part[0] + "\n";
+        }
+
+      });
+    });
+  });
+
+  const blob = new Blob([output], {
+    type: "text/plain;charset=utf-8"
+  });
+
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+
+  link.href = url;
+  link.download = "My_Mathematics_Worksheet.txt";
+  link.click();
+
+  URL.revokeObjectURL(url);
+}
+
+// Clear answers
+
+function clearAnswers() {
+
+  const confirmed = confirm(
+    "Are you sure you want to erase all answers? This cannot be undone."
+  );
+
+  if (!confirmed) return;
+
+  document.querySelectorAll("[data-answer]").forEach(area => {
+    area.value = "";
+    localStorage.removeItem(area.id);
+  });
+
+  updateProgress();
+}
+
+</script>
+
+</body>
+</html>
